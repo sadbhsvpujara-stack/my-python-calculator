@@ -7,7 +7,7 @@ def consent():
 
   # using exception handling if user inputs any statements that is outside
   try:
-      if consent.lower() == "Yes":
+      if consent.lower() == 'yes':
 
           # taking string from user
           a=input("Enter a string: ")
@@ -48,14 +48,14 @@ def consent():
             d=a[::-1]
             print(d)
 
-      elif consent.lower() == "No":
+      elif consent.lower() == 'no':
           print("Thank You")
 
-  except:
+  except Exception as e:
+      print(F"An error occured: {e}")
       raise TypeError
   
-  finally:
-     print(f"The encoded code of your string is given")
+
    
 
 def consent1():
@@ -64,10 +64,11 @@ def consent1():
 
   # using try and except statement to handle wrong input by user
   try:
-    if consent1.lower() == "Yes":
+    if consent1 == 'yes':
         # taking code from user
         code=input("enter your encoded code ")
 
+# using nested if else
         if len(code) <= 3:
           d=code[::-1]
           print(d)
@@ -80,14 +81,13 @@ def consent1():
           mo=rem+red
           print(mo)
 
-    elif consent1.lower() == "No":
+    elif consent1.lower() == 'no':
         print("Decoding precodure has not started.")
 
   except:
-    raise TypeError
+    raise ValueError
 
-  finally:
-     print(f"Decoded string is given.")
+
   
 if __name__ == "__main__":
 
